@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+//mongoose encription module
 const encrypt = require('mongoose-encryption');
 
 //creating an instance
