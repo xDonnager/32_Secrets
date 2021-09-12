@@ -65,29 +65,12 @@ app.post('/register', function(req, res){
             });
         });
     });
-
-    /* md5 encryption
-    const newUser = new User({
-        email: req.body.username,
-        password: md5(req.body.password)
-    });
-
-    newUser.save( function(err){
-        if(err){
-            console.log(err);
-        }else{
-            res.render('secrets');
-        }
-    });*/
-
 });
 
 
 app.post('/login', function(req, res){
     //console.log(req.body);
     const username =  req.body.username;
-    /*md5
-    const password = md5(req.body.password);*/
     const password = req.body.password
 
     User.findOne({email: username}, function(err, foundUser){
@@ -101,7 +84,6 @@ app.post('/login', function(req, res){
                         res.render('secrets');
                     }
                 });            
-                
             }
         }
     })
